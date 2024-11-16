@@ -1,11 +1,14 @@
-name: istory ci/cd pipeline
+name: istory ci/cd dev pipeline
 
 on:
   push:
-    branches: [ "develop","main" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "develop","main" ]
+    branches: [ "develop" ]
 jobs:
+  verify-pipeline:
+    runs-on: ubuntu-latest
+    steps:
       - name: Source Code Checkout
         uses: actions/checkout@v4 
 
